@@ -4,7 +4,6 @@ module.exports = {
     //提交时的信息校验方法
     checkLevelParamsPromise: function (reqParam) {
         return new Promise ((resolve,reject) => {
-            console.log('reqParam----- :', reqParam);
             if (!reqParam.name) {
                 reject({ code: 201, message: '级别是必填选项！！'});
             }

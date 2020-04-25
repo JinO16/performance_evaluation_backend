@@ -3,7 +3,6 @@ module.exports = {
     //添加级别
     add: function(req,res,next) {
         let reqParam = req.body;
-        console.log('reqParam----->',reqParam)
         levelServer.checkLevelParamsPromise(reqParam).then(result => {
             return levelServer.createLevel(reqParam);
         }).then (result => {
@@ -24,7 +23,6 @@ module.exports = {
     //修改级别
     update:function (req,res,next) {
         let reqParam = req.body;
-        console.log('reqParam----> :', req);
         levelServer.updateLevel(reqParam).then(result => {
             res.send(result);
         }).catch(err => {

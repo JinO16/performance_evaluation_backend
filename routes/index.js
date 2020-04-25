@@ -1,7 +1,10 @@
 module.exports = {
   //用户信息
   'POST /user/add':'UserController.add',//添加用户信息
+  'POST /user/login': 'UserController.login',//登录
+  'POST /user/logout':'UserController.logout',//退出登录
   'GET /user/getAll': 'UserController.getAll',//获取所有用户
+  'GET /user/getInfo': 'UserController.getInfo',//获取用户个人信息
   'PUT /user/update': 'UserController.update',//修改用户信息接口
   'DELETE /user/delete': 'UserController.delete',//删除用户信息
   //级别
