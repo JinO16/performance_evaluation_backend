@@ -1,13 +1,57 @@
 var createError = require('http-errors');
 var express = require('express');
+var cors = require('cors');
+var multer = require('multer');
+var fs = require('fs');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/routeLoad')
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
+const port = 3000;
 var app = express();
-
+app.use(cors());
+const upload = multer({
+  dest:'./upload'
+})
+//处理文件上传的请求
+app.post('/upload',upload.array('file'),(req,res) => {
+  console.log('req.files :>> ', req.files);
+  for (let i of req.files) {
+    fs.readFile(i.path, function(err, data) {
+      console.log(`err----${err}`);
+      if (err) {
+        res.send({ code:500, message:'上传失败'+ err})
+      } else {
+        var dir_file = __dirname + '/' + i.originalname;
+        console.log('dir_file--->',dir_file);
+        fs.writeFile(dir_file, data, function(err) {
+          var obj = {
+            originalname:i.originalname,
+            filename:i.filename
+  
+          }
+          console.log('obj---->',obj);
+          res.send(JSON.stringify(obj))
+        })
+      }
+    })
+  }
+  
+})
+app.listen(port, () => {
+  console.log('监听端口---',port);
+})
+//下载文件
+app.get(`/downLoad`, function(req,res,next) {
+  let fileId = req.param('fileId');
+  console.log('req :>> ', req.query);
+  console.log('fileId :>> ', fileId);
+  let file = path.join(__dirname,'./upload/' + fileId)
+  console.log('file :>> ', file);
+  res.download(file);
+})
 // view engine setup
 //设置跨域访问
 app.all('*', function(req, res, next) {

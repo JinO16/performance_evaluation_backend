@@ -12,4 +12,10 @@ module.exports = {
   'GET /level/getAll': 'LevelController.getAll',//获取所有级别
   'POST /level/update': 'LevelController.update',//修改级别
   'DELETE /level/delete': 'LevelController.delete',//删除级别
+  //教学教研考评模块相关接口
+  //教学教研子模块
+  'POST /teachRes/add': 'TeachResController.add',//添加教学教研模块
+  'GET /teachRes/getOwn': 'TeachResController.getOwnTeachRes',//用户获取自己的教学教研数据清单
+  'DELETE /teachRes/delete':'TeachResController.delete',//删除某一条教学教研模块
+  'PUT /teachRes/update': 'TeachResController.update',//修改某条数据
 }
