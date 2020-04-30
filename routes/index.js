@@ -18,4 +18,5 @@ module.exports = {
   'GET /teachRes/getOwn': 'TeachResController.getOwnTeachRes',//用户获取自己的教学教研数据清单
   'DELETE /teachRes/delete':'TeachResController.delete',//删除某一条教学教研模块
   'PUT /teachRes/update': 'TeachResController.update',//修改某条数据
+  'GET /teachRes/getAll': 'TeachResController.getAll',//获取所有教学教研数据清单
 }
