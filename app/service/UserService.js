@@ -1,10 +1,12 @@
 let User = require('../model/UserModel');
 let mongoose = require('mongoose');
+let jwt = require('jsonwebtoken');
+let tokenKey = 'performance_evaluation';
+let redis = require('./../../utils/redis');
 module.exports = {
     //用户信息提交时的信息校验方法
     checkUserParamsPromise: function (reqParam) {
         return new Promise ((resolve,reject) => {
-            console.log('reqParam----- :', reqParam);
             if (!reqParam.name) {
                 reject({ code: 201, message: '姓名是必填选项！！'});
             }
@@ -55,9 +57,58 @@ module.exports = {
             
         })
     },
+    //登录方法
+    login: function (reqParam) {
+        return new Promise((resolve, reject) => {
+            if (!reqParam.jobID) {
+                reject({ code: 204, message: '登录失败，请输入工号！'})
+            }
+            if (!reqParam.password) {
+                reject({ code: 204, message: '登录失败，请输入密码！'})
+            }
+            let param = {
+                jobID: reqParam.jobID
+            }
+            User.findOne(param, (err, data) => {
+                console.log('param---->',param)
+                console.log('data--->',data,'----',err);
+                if (err) {
+                    reject({ code: 500, message: '登录失败'});
+                }
+                if (!data) {
+                    reject({ code: 205, message: '登录失败，查无该用户！如需登录请联系管理员！'})
+                }
+                if (data && reqParam.password !== data.password) {
+                    reject({ code: 206, message: '登录失败，账号或密码有误！'})
+                }
+                if (data && reqParam.password == data.password) {
+                    const payload = { _id: data._id, jobID: data.jobID};
+                    const token = jwt.sign(payload,tokenKey);
+                    redis.hmset(token, { _id: data._id.toString(), createTime: new Date() });
+                    redis.expire(token, 100000000);
+                    resolve({ code: 200, message: '登录成功',token: token, result: data});
+                }
+                
+            })
+        })
+    },
+    //用户登录获取个人信息接口
+    getInfo: id => new Promise((resolve, reject) => {
+        console.log('id----->',id)
+        if (!id) {
+            reject({ code: 204, message: '请先登录'});
+        } else {
+            User.findById(mongoose.Types.ObjectId(id), (err, data) => {
+                if (err) {
+                    reject({ code: 500, message: '获取信息失败' + err.message});
+                } else {
+                    resolve({ code: 200, message: '获取信息成功', result: data})
+                }
+            })
+        }
+    }),
     //获取所有用户信息方法
     getAllUser: function (reqParam) {
-        console.log('server中的参数---->',reqParam)
         return new Promise((resolve,reject) => {
             let data = {},skip,limit;
             if (reqParam.skip) {
@@ -76,7 +127,6 @@ module.exports = {
                 if (err) {
                     reject({code: 500, message: '获取数据失败' + err.message})
                 } else {
-                    console.log('skip---->',skip)
                     User.find(data, null, {skip: parseInt(skip), limit: parseInt(limit)}, function(err,docs) {
                         if (err) {
                             reject({code: 201, message: '获取数据失败' + err.message});
@@ -94,7 +144,7 @@ module.exports = {
             let data = {},
                 updateData = {};
                 if (!reqParam._id) {
-                    reject({code: 201,message:'修改失败，无用户id！'})
+                    reject({code: 201,message:'提交失败，无用户id！'})
                 } else {
                     data._id = mongoose.Types.ObjectId(reqParam._id);
                 }
@@ -112,9 +162,9 @@ module.exports = {
             reqParam.password && (updateData.password = reqParam.password)
             User.findByIdAndUpdate(data._id, updateData, {new: false},function (err, data) {
                 if (err) {
-                    reject({ code: 500, message: '修改失败' + err.message});
+                    reject({ code: 500, message: '提交失败' + err.message});
                 } else {
-                    resolve({ code: 200, message: '修改成功！'})
+                    resolve({ code: 200, message: '提交成功！'})
                 }
             })
         })
