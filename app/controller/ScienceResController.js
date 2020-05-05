@@ -1,4 +1,4 @@
-let teachResServer = require('../service/ScienceResService');
+let scienceResServer = require('../service/ScienceResService');
 module.exports = {
     //添加模块数据
     add: function(req,res,next) {

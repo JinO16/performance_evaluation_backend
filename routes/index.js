@@ -18,10 +18,24 @@ module.exports = {
   'GET /teachRes/getOwn': 'TeachResController.getOwnTeachRes',//用户获取自己的教学教研数据清单
   'DELETE /teachRes/delete':'TeachResController.delete',//删除某一条教学教研模块
   'PUT /teachRes/update': 'TeachResController.update',//修改某条数据
+  'GET /teachRes/getAll': 'TeachResController.getAll',//获取所有教学教研数据清单
   //科研考评模块相关接口
-  //科研考评子模块
-  'POST /scienceRes/add': 'ScienceResController.add',//添加模块
-  'GET /scienceRes/getOwn': 'ScienceResController.getOwnScienceRes',//用户获取自己的数据清单
-  'DELETE /scienceRes/delete':'ScienceResController.delete',//删除某一条模块
-  'PUT /scienceRes/update': 'ScienceResController.update',//修改某条数据
+  //科研论文
+  'POST /sciencePapers/add': 'ScienceResController.add',//添加模块
+  'GET /sciencePapers/getOwn': 'ScienceResController.getOwnScienceRes',//用户获取自己的数据清单
+  'DELETE /sciencePapers/delete':'ScienceResController.delete',//删除某一条模块
+  'PUT /sciencePapers/update': 'ScienceResController.update',//修改某条数据
+  'GET /sciencePapers/getAll': 'ScienceResController.getAll',//获取所有教学教研数据清单
+  //科研成果奖励
+  'POST /scienceAchievement/add': 'ScienceResController.add',//添加模块
+  'GET /scienceAchievement/getOwn': 'ScienceResController.getOwnScienceRes',//用户获取自己的数据清单
+  'DELETE /scienceAchievement/delete':'ScienceResController.delete',//删除某一条模块
+  'PUT /scienceAchievement/update': 'ScienceResController.update',//修改某条数据
+  'GET /scienceAchievement/getAll': 'ScienceResController.getAll',//获取所有教学教研数据清单
+  //科研立项
+  'POST /scienceProjects/add': 'ScienceResController.add',//添加模块
+  'GET /scienceProjects/getOwn': 'ScienceResController.getOwnScienceRes',//用户获取自己的数据清单
+  'DELETE /scienceProjects/delete':'ScienceResController.delete',//删除某一条模块
+  'PUT /scienceProjects/update': 'ScienceResController.update',//修改某条数据
+  'GET /scienceProjects/getAll': 'ScienceResController.getAll',//获取所有教学教研数据清单
 }
