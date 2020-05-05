@@ -36,5 +36,14 @@ module.exports = {
         }).catch(err => {
             res.send(err);
         })
+    },
+    //获取所有教学教研模块清单
+    getAll: function(req,res,next) {
+        let reqParam = req.query;
+        teachResServer.getAllTeachRes(reqParam).then(result => {
+            res.send(result);
+        }).catch(err => {
+            res.send(err)
+        })
     }
 }

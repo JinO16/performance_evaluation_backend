@@ -7,6 +7,9 @@ module.exports = {
             if (!reqParam.name) {
                 reject({ code: 201, message: '级别是必填选项！！'});
             }
+            if (!reqParam.distribScienceFund) {
+                reject({ code: 201, message:'学院分配的科研经费任务是必填选项！'})
+            }
             resolve({code: 200,message:'添加成功'})
         })
     },
@@ -15,6 +18,7 @@ module.exports = {
         return new Promise ((resolve,reject) => {
             let data = {};
             reqParam.name && (data.name = reqParam.name);
+            reqParam.distribScienceFund && (data.distribScienceFund = reqParam.distribScienceFund);
             reqParam.teaching && (data.teaching = reqParam.teaching);
             reqParam.science && (data.science = reqParam.science);
             reqParam.teachAndScience && (data.teachAndScience = reqParam.teachAndScience);
@@ -33,6 +37,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
             let data = {};
             if (reqParam.name) data.name = reqParam.name;
+            if (reqParam.distribScienceFund) data.distribScienceFund = reqParam.distribScienceFund;
             if (reqParam.teaching) data.teaching = reqParam.teaching;
             if (reqParam.science) data.science = reqParam.science;
             if (reqParam.teachAndScience) data.teachAndScience = reqParam.teachAndScience;
@@ -62,6 +67,7 @@ module.exports = {
                 data._id = mongoose.Types.ObjectId(reqParam._id);
             }
             reqParam.name && (updateData.name = reqParam.name);
+            reqParam.distribScienceFund && (updateData.distribScienceFund = reqParam.distribScienceFund);
             reqParam.teaching && (updateData.teaching = reqParam.teaching);
             reqParam.science && (updateData.science = reqParam.science);
             reqParam.teachAndScience && (updateData.teachAndScience = reqParam.teachAndScience);
