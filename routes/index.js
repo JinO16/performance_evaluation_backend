@@ -19,4 +19,10 @@ module.exports = {
   'DELETE /teachRes/delete':'TeachResController.delete',//删除某一条教学教研模块
   'PUT /teachRes/update': 'TeachResController.update',//修改某条数据
   'GET /teachRes/getAll': 'TeachResController.getAll',//获取所有教学教研数据清单
+  //工作量模块
+  'POST /teachWorkload/add': 'TeachWorkloadController.add',//添加工作量模块数据
+  'GET /teachWorkload/getOwn': 'TeachWorkloadController.getOwnTeachWorkload',//用户获取自己的工作量数据清单
+  'PUT /teachWorkload/update': 'TeachWorkloadController.update',//修改某条工作量清单数据
+  'DELETE /teachWorkload/delete': 'TeachWorkloadController.delete',//删除某条工作量清单数据
+  'GET /teachWorkload/getAll': 'TeachWorkloadController.getAll',//获取所有工作量数据清单
 }

@@ -7,6 +7,7 @@ let mongoose = require('../../utils/db');
 let Schema = mongoose.Schema;
 let LevelShema = new Schema({
     name : {type: String,required: true},//级别名称
+    distribScienceFund: {type: String,required: true},//学院分配科研经费任务
     //教学岗
     teaching: {type: Object, required: true},
     //科研岗
