@@ -85,7 +85,7 @@ module.exports = {
                     const payload = { _id: data._id, jobID: data.jobID};
                     const token = jwt.sign(payload,tokenKey);
                     redis.hmset(token, { _id: data._id.toString(), createTime: new Date() });
-                    redis.expire(token, 100000000);
+                    redis.expire(token, 1000000000000000000000);
                     resolve({ code: 200, message: '登录成功',token: token, result: data});
                 }
                 

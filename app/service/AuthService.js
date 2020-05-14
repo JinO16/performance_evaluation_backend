@@ -19,7 +19,7 @@ module.exports = {
                     } else {
                         reply.refreshTime = parseInt(reply.refreshTime);
                         redis.hmset(token,reply);
-                        redis.expire(token,60 * 15);
+                        redis.expire(token,60 * 150000000000);
                         jwt.verify(token, tokenKey, function(err, decoded) {
                             if (err) {
                                 reject({ code: 500, message: '权限验证失败' + err.message});

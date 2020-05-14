@@ -8,18 +8,9 @@ module.exports = {
             reqParam.name && (data.name = reqParam.name);
             reqParam.jobID && (data.jobID = reqParam.jobID);
             reqParam.station && (data.station = reqParam.station);
-            reqParam.auditRecord && (data.auditRecord = reqParam.auditRecord);
+            reqParam.finalAuditRecord && (data.finalAuditRecord = reqParam.finalAuditRecord);
             reqParam.submitTime && (data.submitTime = reqParam.submitTime);
-            reqParam.workLoad && (data.workLoad = reqParam.workLoad);
-            // reqParam.classWork && (data.classWork = reqParam.classWork);
-            // reqParam.instructorWork && (data.instructorWork = reqParam.instructorWork);
-            // reqParam.experimentWork && (data.experimentWork = reqParam.experimentWork);
-            // reqParam.scienceFunds && (data.scienceFunds = reqParam.scienceFunds);
-            // reqParam.scienceFundsWork && (data.scienceFundsWork = reqParam.scienceFundsWork);
-            // reqParam.isFinish && (data.isFinish = reqParam.isFinish);
-            // reqParam.teachWorkSum && (data.teachWorkSum = reqParam.teachWorkSum);
-            // reqParam.scoreSum && (data.scoreSum = reqParam.scoreSum);
-            // reqParam.itemScore && (data.itemScore = reqParam.itemScore);
+            reqParam.teachingMoudle && (data.teachingMoudle = reqParam.teachingMoudle);
             let TeachWorkloadData = new TeachWorkload(data);
             TeachWorkloadData.save(function (err,data) {
                 if (err) {
@@ -67,9 +58,9 @@ module.exports = {
             reqParam.name && (updateData.name = reqParam.name);
             reqParam.jobID && (updateData.jobID = reqParam.jobID);
             reqParam.station && (updateData.station = reqParam.station);
-            reqParam.auditRecord && (updateData.auditRecord = reqParam.auditRecord);
+            reqParam.finalAuditRecord && (updateData.finalAuditRecord = reqParam.finalAuditRecord);
             reqParam.submitTime && (updateData.submitTime = reqParam.submitTime);
-            reqParam.workLoad && (updateData.workLoad = reqParam.workLoad);
+            reqParam.teachingMoudle && (updateData.teachingMoudle = reqParam.teachingMoudle);
             TeachWorkload.findByIdAndUpdate(data._id,updateData,{new: false}, function(err, data) {
                 if (err) {
                     reject({ code: 500, message:'创建失败，' + err.message})
@@ -122,6 +113,26 @@ module.exports = {
                             reject({ code: 201, message: '数据获取失败，'+ err.message});
                         } else {
                             resolve({ code: 200, count: count, message: '获取数据成功！', result:docs})
+                        }
+                    })
+                }
+            })
+        })
+    },
+    //根据_id获取某一条单子的基本form
+    getBaseFormData: (reqParam) => {
+        return new Promise((resolve, reject) => {
+            let data = {};
+            TeachWorkload.countDocuments(reqParam, function (err) {
+                if (err) {
+                    reject({ code: 500, message:'获取数据失败！' + err.message});
+                } else {
+                    if (reqParam._id) data._id = reqParam._id;
+                    TeachWorkload.find(data, null, function(err, docs) {
+                        if (err) {
+                            reject({ code: 201, message:'获取数据失败！' + err.message});
+                        } else {
+                            resolve({ code: 200, message:'获取数据成功！',result:docs});
                         }
                     })
                 }
