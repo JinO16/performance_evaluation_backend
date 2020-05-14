@@ -19,32 +19,29 @@ module.exports = {
   'DELETE /teachRes/delete':'TeachResController.delete',//删除某一条教学教研模块
   'PUT /teachRes/update': 'TeachResController.update',//修改某条数据
   'GET /teachRes/getAll': 'TeachResController.getAll',//获取所有教学教研数据清单
-<<<<<<< HEAD
   //科研考评模块相关接口
   //科研论文
-  'POST /sciencePapers/add': 'ScienceResController.add',//添加模块
-  'GET /sciencePapers/getOwn': 'ScienceResController.getOwnScienceRes',//用户获取自己的数据清单
-  'DELETE /sciencePapers/delete':'ScienceResController.delete',//删除某一条模块
-  'PUT /sciencePapers/update': 'ScienceResController.update',//修改某条数据
-  'GET /sciencePapers/getAll': 'ScienceResController.getAll',//获取所有教学教研数据清单
+  'POST /sciPapers/add': 'SciPapersController.add',//添加模块
+  'GET /sciPapers/getOwn': 'SciPapersController.getOwnSciPapers',//用户获取自己的数据清单
+  'DELETE /sciPapers/delete':'SciPapersController.delete',//删除某一条模块
+  'PUT /sciPapers/update': 'SciPapersController.update',//修改某条数据
+  'GET /sciPapers/getAll': 'SciPapersController.getAll',//获取所有教学教研数据清单
   //科研成果奖励
-  'POST /scienceAchievement/add': 'ScienceResController.add',//添加模块
-  'GET /scienceAchievement/getOwn': 'ScienceResController.getOwnScienceRes',//用户获取自己的数据清单
-  'DELETE /scienceAchievement/delete':'ScienceResController.delete',//删除某一条模块
-  'PUT /scienceAchievement/update': 'ScienceResController.update',//修改某条数据
-  'GET /scienceAchievement/getAll': 'ScienceResController.getAll',//获取所有教学教研数据清单
+  'POST /sciAchievement/add': 'SciAchievementController.add',//添加模块
+  'GET /sciAchievement/getOwn': 'SciAchievementController.getOwnSciAchievement',//用户获取自己的数据清单
+  'DELETE /sciAchievement/delete':'SciAchievementController.delete',//删除某一条模块
+  'PUT /sciAchievement/update': 'SciAchievementController.update',//修改某条数据
+  'GET /sciAchievement/getAll': 'SciAchievementController.getAll',//获取所有教学教研数据清单
   //科研立项
-  'POST /scienceProjects/add': 'ScienceResController.add',//添加模块
-  'GET /scienceProjects/getOwn': 'ScienceResController.getOwnScienceRes',//用户获取自己的数据清单
-  'DELETE /scienceProjects/delete':'ScienceResController.delete',//删除某一条模块
-  'PUT /scienceProjects/update': 'ScienceResController.update',//修改某条数据
-  'GET /scienceProjects/getAll': 'ScienceResController.getAll',//获取所有教学教研数据清单
-=======
+  'POST /sciProjects/add': 'SciProjectsController.add',//添加模块
+  'GET /sciProjects/getOwn': 'SciProjectsController.getOwnSciProjects',//用户获取自己的数据清单
+  'DELETE /sciProjects/delete':'SciProjectsController.delete',//删除某一条模块
+  'PUT /sciProjects/update': 'SciProjectsController.update',//修改某条数据
+  'GET /sciProjects/getAll': 'SciProjectsController.getAll',//获取所有教学教研数据清单
   //工作量模块
   'POST /teachWorkload/add': 'TeachWorkloadController.add',//添加工作量模块数据
   'GET /teachWorkload/getOwn': 'TeachWorkloadController.getOwnTeachWorkload',//用户获取自己的工作量数据清单
   'PUT /teachWorkload/update': 'TeachWorkloadController.update',//修改某条工作量清单数据
   'DELETE /teachWorkload/delete': 'TeachWorkloadController.delete',//删除某条工作量清单数据
   'GET /teachWorkload/getAll': 'TeachWorkloadController.getAll',//获取所有工作量数据清单
->>>>>>> master
 }
