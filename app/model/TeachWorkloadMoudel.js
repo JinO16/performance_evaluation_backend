@@ -8,6 +8,7 @@ let TeachWorkloadShema = new Schema({
     jobID: {type: String, require: true},//工号
     station: {type: String, require: true},//岗位
     finalAuditRecord: {type: Array, require: true},//最终审核记录
+    finalStatus: {type: String, require: true},//总审核状态
     submitTime: {type:String, require: true},//提交时间
     teachingMoudle: {type:Object, require: true},//教学教研总模块，里面包括workLoad等所有子模块
 })

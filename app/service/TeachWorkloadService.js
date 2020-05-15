@@ -9,6 +9,7 @@ module.exports = {
             reqParam.jobID && (data.jobID = reqParam.jobID);
             reqParam.station && (data.station = reqParam.station);
             reqParam.finalAuditRecord && (data.finalAuditRecord = reqParam.finalAuditRecord);
+            reqParam.finalStatus && (data.finalStatus = reqParam.finalStatus);
             reqParam.submitTime && (data.submitTime = reqParam.submitTime);
             reqParam.teachingMoudle && (data.teachingMoudle = reqParam.teachingMoudle);
             let TeachWorkloadData = new TeachWorkload(data);
@@ -59,6 +60,7 @@ module.exports = {
             reqParam.jobID && (updateData.jobID = reqParam.jobID);
             reqParam.station && (updateData.station = reqParam.station);
             reqParam.finalAuditRecord && (updateData.finalAuditRecord = reqParam.finalAuditRecord);
+            reqParam.finalStatus && (updateData.finalStatus = reqParam.finalStatus);
             reqParam.submitTime && (updateData.submitTime = reqParam.submitTime);
             reqParam.teachingMoudle && (updateData.teachingMoudle = reqParam.teachingMoudle);
             TeachWorkload.findByIdAndUpdate(data._id,updateData,{new: false}, function(err, data) {
