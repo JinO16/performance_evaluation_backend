@@ -45,5 +45,14 @@ module.exports = {
         }).catch(err => {
             res.send(err)
         })
+    },
+    //获取某一条数据的form
+    getBase: function(req,res,next) {
+        let reqParam = req.query;
+        teachWorkloadServer.getBaseFormData(reqParam).then(result => {
+            res.send(result);
+        }).catch(err => {
+            res.send(err);
+        })
     }
 }
