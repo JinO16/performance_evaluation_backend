@@ -12,7 +12,10 @@ module.exports = {
             reqParam.finalStatus && (data.finalStatus = reqParam.finalStatus);
             reqParam.submitTime && (data.submitTime = reqParam.submitTime);
             reqParam.teachingMoudle && (data.teachingMoudle = reqParam.teachingMoudle);
+<<<<<<< HEAD
             reqParam.scienceMoudle && (data.scienceMoudle = reqParam.scienceMoudle);
+=======
+>>>>>>> master
             let TeachWorkloadData = new TeachWorkload(data);
             TeachWorkloadData.save(function (err,data) {
                 if (err) {
@@ -64,7 +67,10 @@ module.exports = {
             reqParam.finalStatus && (updateData.finalStatus = reqParam.finalStatus);
             reqParam.submitTime && (updateData.submitTime = reqParam.submitTime);
             reqParam.teachingMoudle && (updateData.teachingMoudle = reqParam.teachingMoudle);
+<<<<<<< HEAD
             reqParam.scienceMoudle && (updateData.scienceMoudle = reqParam.scienceMoudle);
+=======
+>>>>>>> master
             TeachWorkload.findByIdAndUpdate(data._id,updateData,{new: false}, function(err, data) {
                 if (err) {
                     reject({ code: 500, message:'创建失败，' + err.message})
