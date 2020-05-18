@@ -8,6 +8,7 @@ module.exports = {
             reqParam.name && (data.name = reqParam.name);
             reqParam.jobID && (data.jobID = reqParam.jobID);
             reqParam.station && (data.station = reqParam.station);
+            reqParam.department && (data.department = reqParam.department);
             reqParam.finalAuditRecord && (data.finalAuditRecord = reqParam.finalAuditRecord);
             reqParam.finalStatus && (data.finalStatus = reqParam.finalStatus);
             reqParam.submitTime && (data.submitTime = reqParam.submitTime);
@@ -59,6 +60,7 @@ module.exports = {
             reqParam.name && (updateData.name = reqParam.name);
             reqParam.jobID && (updateData.jobID = reqParam.jobID);
             reqParam.station && (updateData.station = reqParam.station);
+            reqParam.department && (updateData.department = reqParam.department);
             reqParam.finalAuditRecord && (updateData.finalAuditRecord = reqParam.finalAuditRecord);
             reqParam.finalStatus && (updateData.finalStatus = reqParam.finalStatus);
             reqParam.submitTime && (updateData.submitTime = reqParam.submitTime);
@@ -140,5 +142,25 @@ module.exports = {
                 }
             })
         })
-    }
+    },
+    //根据部门获取所有本部门的数据单
+    getDataByDepartment: (reqParam => {
+        return new Promise((resolve, reject) => {
+            let data = {};
+            TeachWorkload.countDocuments(reqParam,function (err) {
+                if (err) {
+                    reject({ code: 500, message:'获取数据失败！' + err.message});
+                } else {
+                    if (reqParam.department) data.department = reqParam.department;
+                    TeachWorkload.find(data, null, function(err, docs) {
+                        if (err) {
+                            reject({ code: 201, message:'获取数据失败！' + err.message});
+                        } else {
+                            resolve({ code: 200, message:'获取数据成功！', result:docs});
+                        }
+                    })
+                }
+            })
+        })
+    })
 }

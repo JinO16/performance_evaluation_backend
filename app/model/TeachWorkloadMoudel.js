@@ -7,6 +7,7 @@ let TeachWorkloadShema = new Schema({
     name: {type: String, required: true},//用户姓名
     jobID: {type: String, require: true},//工号
     station: {type: String, require: true},//岗位
+    department: {type: String, require: true},//部门
     finalAuditRecord: {type: Array, require: true},//最终审核记录
     finalStatus: {type: String, require: true},//总审核状态
     submitTime: {type:String, require: true},//提交时间
