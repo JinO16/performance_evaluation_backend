@@ -186,5 +186,25 @@ module.exports = {
                 }
             })
         })
+    },
+    //根据角色获取用户方法
+    findByRole: function(reqParam) {
+        return new Promise((resolve, reject) => {
+            let data = {};
+            User.countDocuments(reqParam, function(err) {
+                if (err) {
+                    reject({ code: 500, message:'获取用户信息失败'})
+                } else {
+                    if (reqParam.role) data.role = reqParam.role;
+                    User.find(data, null, function(err, docs) {
+                        if (err) {
+                            reject({ code: 201, message:'获取数据失败!' + err.message });
+                        } else {
+                            resolve({ code: 200, message:'获取数据成功！', result:docs});
+                        }
+                    })
+                }
+            })
+        })
     }
 }

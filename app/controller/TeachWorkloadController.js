@@ -54,5 +54,14 @@ module.exports = {
         }).catch(err => {
             res.send(err);
         })
+    },
+    //通过部门获取所有本部门的数据清单
+    getByDepartment: function(req,res,next) {
+        let reqParam = req.query;
+        teachWorkloadServer.getDataByDepartment(reqParam).then(result => {
+            res.send(result);
+        }).catch(err => {
+            res.send(err);
+        })
     }
 }

@@ -89,5 +89,14 @@ module.exports = {
             res.send(err);
         })
         
+    },
+    //根据角色获取用户信息
+    getUserByRole: function(req, res, next) {
+        let reqParam = req.query;
+        userServer.findByRole(reqParam).then(result => {
+            res.send(result);
+        }).catch(err => {
+            res.send(err);
+        })
     }
 }
