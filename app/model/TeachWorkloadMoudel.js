@@ -11,10 +11,7 @@ let TeachWorkloadShema = new Schema({
     finalStatus: {type: String, require: true},//总审核状态
     submitTime: {type:String, require: true},//提交时间
     teachingMoudle: {type:Object, require: true},//教学教研总模块，里面包括workLoad等所有子模块
-<<<<<<< HEAD
     scienceMoudle: {type:Object, require: true},//科研考评总模块
-=======
->>>>>>> master
 })
 let TeachWorkloadMoudel = mongoose.model('TeachWorkload',TeachWorkloadShema);
 TeachWorkloadMoudel.ensureIndexes(function(err) {
