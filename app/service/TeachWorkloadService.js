@@ -16,7 +16,6 @@ module.exports = {
             reqParam.xyrModule && (data.xyrModule = reqParam.xyrModule);
             reqParam.zygxModule && (data.zygxModule = reqParam.zygxModule);
             reqParam.xsgzModule && (data.xsgzModule = reqParam.xsgzModule);
-
             let TeachWorkloadData = new TeachWorkload(data);
             TeachWorkloadData.save(function (err,data) {
                 if (err) {
@@ -52,7 +51,6 @@ module.exports = {
             })
         })
     },
-
     //修改某一条工作量模块清单
     updateTeachWorkload: (reqParam) => {
         return new Promise((resolve, reject) => {
@@ -73,7 +71,6 @@ module.exports = {
             reqParam.xyrModule && (updateData.xyrModule = reqParam.xyrModule);
             reqParam.zygxModule && (updateData.zygxModule = reqParam.zygxModule);
             reqParam.xsgzModule && (updateData.xsgzModule = reqParam.xsgzModule);
-
             TeachWorkload.findByIdAndUpdate(data._id,updateData,{new: false}, function(err, data) {
                 if (err) {
                     reject({ code: 500, message:'创建失败，' + err.message})
@@ -83,7 +80,6 @@ module.exports = {
             })
         })
     },
-
     //删除某一条工作量模块清单
     deleteTeachWorkload: (reqParam) => {
         return new Promise((resolve,reject) => {
@@ -102,8 +98,6 @@ module.exports = {
             }
         })
     },
-
-    
     //获取所有的工作量数据清单
     getAllTeachWorkload: (reqParam) => {
         return new Promise((resolve, reject) => {

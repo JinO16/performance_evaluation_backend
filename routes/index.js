@@ -37,7 +37,5 @@ module.exports = {
    'POST /zygxStationSet/add': 'ZygxStationController.add',//添加岗位权重
    'GET /zygxStationSet/getAll':'ZygxStationController.getAll',//获取岗位信息接口
    'PUT /zygxStationSet/update': 'ZygxStationController.update',//修改岗位信息接口
-   
-
 
 }

@@ -15,6 +15,7 @@ let TeachWorkloadShema = new Schema({
     xyrModule: {type:Object, require: false},//学科建设研究生工作人才引进模块
     zygxModule: {type:Object, require: false},//专业贡献模块
     xsgzModule: {type:Object, require: false}//学生工作模块
+
 })
 let TeachWorkloadMoudel = mongoose.model('TeachWorkload',TeachWorkloadShema);
 TeachWorkloadMoudel.ensureIndexes(function(err) {
