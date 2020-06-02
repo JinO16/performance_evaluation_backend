@@ -1,0 +1,73 @@
+      <!-- 展开或隐藏的内容 -->
+      <el-table-column type="expand">
+        <template slot-scope="scope" > 
+          <el-form label-position="left" inline class="demo-table-expand">
+            
+              <el-form-item label="项目名称:">
+                {{scope.row.xyrModule.yjsgz ? scope.row.xyrModule.yjsgz.name : 0}}
+              </el-form-item>
+              <el-form-item label="项目类型:">
+                {{scope.row.xyrModule.yjsgz ? scope.row.xyrModule.yjsgz.type : 0}}
+              </el-form-item>
+              <el-form-item label="个人逐项计分:">
+                {{scope.row.xyrModule.yjsgz ? scope.row.xyrModule.yjsgz.itemScore : 0}}
+              </el-form-item>
+
+
+
+
+
+
+              <el-form-item label="审核记录:">
+                <div v-for="(item,key) in scope.row.finalAuditRecord">
+                  <span class="data-items">审核人: {{item.auditPerson ? item.auditPerson :'暂无'}}</span>
+                  <span class="data-items">审核时间: {{item.auditTime ? item.auditTime : 0 | formateDate}}</span>
+                  <span class="data-items">状态: {{item.auditStatus ? item.auditStatus : '待审核'}}</span>
+                  <span class="data-items">审核理由: {{item.auditReason ? item.auditReason : '暂无'}}</span>
+                </div>
+                <div v-for="(item,key) in scope.row.xyrModule ? scope.row.xyrModule.yjsgzModuleAuditRecord : []">
+                  <span class="data-items">审核人: {{item.auditPerson ? item.auditPerson :'暂无'}}</span>
+                  <span class="data-items">审核时间: {{item.auditTime ? item.auditTime : 0 | formateDate}}</span>
+                  <span class="data-items">状态: {{item.auditStatus ? item.auditStatus : '待审核'}}</span>
+                  <span class="data-items">审核理由: {{item.auditReason ? item.auditReason : '暂无'}}</span>
+                </div>
+                <div v-for="(item,key) in scope.row.xyrModule.yjsgz ? scope.row.xyrModule.yjsgz.auditRecord : []">
+                  <span class="data-items">审核人: {{item.auditPerson ? item.auditPerson :'暂无'}}</span>
+                  <span class="data-items">审核时间: {{item.auditTime ? item.auditTime : 0 | formateDate}}</span>
+                  <span class="data-items">状态: {{item.auditStatus ? item.auditStatus : '待审核'}}</span>
+                  <span class="data-items">审核理由: {{item.auditReason ? item.auditReason : '暂无'}}</span>
+                </div>
+              </el-form-item>
+            
+          </el-form>
+        </template>
+      </el-table-column>
+
+
+
+
+
+
+
+
+
+{
+        value: 10,
+        label:'指导省级优秀硕士论文',   
+           },
+{
+        value: 5,
+        label:'校级优秀硕士论文',   
+           },
+{
+        value: 10,
+        label:'招生宣传',   
+           },
+{
+        value: 10,
+        label:'招生目录编制',   
+           },
+{
+        value: 20,
+        label:'培养方案修订',   
+           },

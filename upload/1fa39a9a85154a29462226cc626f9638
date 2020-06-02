@@ -1,0 +1,21 @@
+Path：C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Users\Administrator\AppData\Roaming\npm
+
+
+
+
+系统变量
+Path:%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft VS Code\bin;E:\node\;E:\mongo\bin
+
+
+
+
+打开cmd输入services.msc查看服务可以看到MongoDB服务，点击可以启动。
+
+打开一个 cmd 窗口 使用 cd 命令切换目录到 C:\redis 运行：redis-server.exe redis.windows.conf
+
+
+
+https://github.com/JinO16/performance_evaluation_system.git
+
+https://github.com/JinO16/performance_evaluation_backend.git
+

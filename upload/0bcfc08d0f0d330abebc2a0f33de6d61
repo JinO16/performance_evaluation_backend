@@ -1,0 +1,424 @@
+
+xkjs下的type_options
+
+type_options:[{
+        value: '学科评估',
+        label: '学科评估',
+        children: [{
+            value: 50,
+            label: '学科评估工作'
+          },{
+            value: 50,
+            label: '学位点申报工作'
+          },{
+            value: 50,
+            label: '学位点评估工作'
+          }]
+          },{
+          value: '学科相关',
+          label: '学科相关',
+          children: [{
+          value: 50,
+          label:'国家级'
+          },{
+            value: 30,
+            label: '省部级'
+          },{
+            value: 20,
+            label: '校级'
+          }]
+        }]
+          },{
+          value: '学科规划',
+          label: '学科规划',
+          children: [{
+          value: 20,
+          label:'规划、中期建设、总结工作'
+          },{
+            value: 30,
+            label: '校外专家评审接待工作'
+          },{
+            value: 20,
+            label: '其它临时分派工作'
+          }]
+        }],
+
+
+yjsgz下的type_options
+
+      type_options:[{
+        value: '优秀论文指导',
+        label: '优秀论文指导',
+        children: [{
+            value: 10,
+            label: '指导省级优秀硕士论文'
+          },{
+            value: 5,
+            label: '指导校级优秀硕士论文'
+          }]
+
+          },{
+          value: '招生宣传',
+          label: '招生宣传',
+          children: [{
+          value: 10,
+          label:'宣传专业'
+          },{
+            value: 10,
+            label: '招生目录编制'
+          },{
+            value: 20,
+            label: '培养方案修订'
+          }]
+        }], 
+
+
+
+rcyj下type_options
+
+      type_options:[{
+        value: '人才引进',
+        label: '人才引进',
+        children: [{
+            value: 10,
+            label: '推荐并引进成功'
+          },{
+            value: 2,
+            label: '人才引进外出宣传及招聘'
+          }]
+          }], 
+
+
+专业贡献：
+
+zyjs下type_options
+
+      type_options:[{
+        value: '奖项级别',
+        label: '奖项级别',
+        children: [{
+            value: 50,
+            label: '国家级'
+          },{
+            value: 40,
+            label: '省部级'
+          },{
+            value: 30,
+            label: '市厅级'
+          },{
+            value: 20,
+            label: '校级'
+          }]
+          },{
+          value: '专业（平台）建设',
+          label: '专业（平台）建设',
+          children: [{
+            value: 20,
+          label:'中期建设'
+          },{
+            value: 20,
+            label: '总结'
+          },{
+            value: 20,
+            label: '验收'
+          {
+            value: 20,
+            label: '评估'
+          }]
+        }], 
+
+
+cyjs下type_options
+
+      type_options:[{
+        value: '参加、指导国家级竞赛',
+        label: '参加、指导国家级竞赛',
+        children: [{
+            value: 12,
+            label: '一等'
+          },{
+            value: 8,
+            label: '二等'
+          },{
+            value: 4,
+            label: '三等'
+          }]
+          },{
+          value: '参加、指导省部级竞赛',
+          label: '参加、指导省部级竞赛',
+          children: [{
+            value: 6,
+          label:'一等'
+          },{
+            value: 4,
+            label: '二等'
+          },{
+            value: 2,
+            label: '三等'
+          }]
+        }], 
+
+
+
+
+学生工作下
+zhuanxiang的type_options
+
+      type_options:[{
+        value: '请选择项数',
+        label: '请选择项数',
+        children: [{
+            value: 10,
+            label: '一项'
+          },{
+            value: 20,
+            label: '两项'
+          },{
+            value: 30,
+            label: '三项'
+          }]
+          }], 
+
+huojiang的type_options
+
+      type_options:[{
+        value: '国家级',
+        label: '国家级',
+        children: [{
+            value: 50,
+            label: '特等奖'
+          },{
+            value: 40,
+            label: '一等将'
+          },{
+            value: 30,
+            label: '二等将'
+          },{
+            value: 20,
+            label: '三等将'
+          },{
+            value: 10,
+            label: '优秀奖'
+          }]
+          },{
+        value: '省部级',
+        label: '省部级',
+        children: [{
+            value: 40,
+            label: '特等奖'
+          },{
+            value: 30,
+            label: '一等将'
+          },{
+            value: 20,
+            label: '二等将'
+          },{
+            value: 10,
+            label: '三等将'
+          },{
+            value: 8,
+            label: '优秀奖'
+          }]
+          },{
+        value: '市厅级',
+        label: '市厅级',
+        children: [{
+            value: 30,
+            label: '特等奖'
+          },{
+            value: 20,
+            label: '一等将'
+          },{
+            value: 10,
+            label: '二等将'
+          },{
+            value: 8,
+            label: '三等将'
+          },{
+            value: 6,
+            label: '优秀奖'
+          }]
+          },{
+        value: '校级',
+        label: '校级',
+        children: [{
+            value: 20,
+            label: '特等奖'
+          },{
+            value: 10,
+            label: '一等将'
+          },{
+            value: 8,
+            label: '二等将'
+          },{
+            value: 6,
+            label: '三等将'
+          },{
+            value: 4,
+            label: '优秀奖'
+          }]
+          },{
+        value: '院级',
+        label: '院级',
+        children: [{
+            value: 10,
+            label: '特等奖'
+          },{
+            value: 8,
+            label: '一等将'
+          },{
+            value: 6,
+            label: '二等将'
+          },{
+            value: 4,
+            label: '三等将'
+          },{
+            value: 2,
+            label: '优秀奖'
+          }]
+          }],
+
+
+
+      type_options:[{
+        value: '国家级',
+        label: '国家级',
+        children: [{
+            value: 50,
+            label: '特等奖'
+          },{
+            value: 40,
+            label: '一等将'
+          },{
+            value: 30,
+            label: '二等将'
+          },{
+            value: 20,
+            label: '三等将'
+          },{
+            value: 10,
+            label: '优秀奖'
+          }]
+          },{
+        value: '省部级',
+        label: '省部级',
+        children: [{
+            value: 40,
+            label: '特等奖'
+          },{
+            value: 30,
+            label: '一等将'
+          },{
+            value: 20,
+            label: '二等将'
+          },{
+            value: 10,
+            label: '三等将'
+          },{
+            value: 8,
+            label: '优秀奖'
+          }]
+          },{
+        value: '市厅级',
+        label: '市厅级',
+        children: [{
+            value: 30,
+            label: '特等奖'
+          },{
+            value: 20,
+            label: '一等将'
+          },{
+            value: 10,
+            label: '二等将'
+          },{
+            value: 8,
+            label: '三等将'
+          },{
+            value: 6,
+            label: '优秀奖'
+          }]
+          },{
+        value: '校级',
+        label: '校级',
+        children: [{
+            value: 20,
+            label: '特等奖'
+          },{
+            value: 10,
+            label: '一等将'
+          },{
+            value: 8,
+            label: '二等将'
+          },{
+            value: 6,
+            label: '三等将'
+          },{
+            value: 4,
+            label: '优秀奖'
+          }]
+          },{
+        value: '院级',
+        label: '院级',
+        children: [{
+            value: 10,
+            label: '特等奖'
+          },{
+            value: 8,
+            label: '一等将'
+          },{
+            value: 6,
+            label: '二等将'
+          },{
+            value: 4,
+            label: '三等将'
+          },{
+            value: 2,
+            label: '优秀奖'
+          }]
+          }],
+
+
+
+biaozhang的type_options
+
+      type_options:[{
+        value: '获得称号/表彰级别',
+        label: '获得称号/表彰级别',
+        children: [{
+            value: 60,
+            label: '国家级'
+          },{
+            value: 40,
+            label: '省部级'
+          },{
+            value: 20,
+            label: '市厅级'
+          }]
+          }], 
+
+chuangxin的type_options
+
+      type_options:[{
+        value: '获奖级别',
+        label: '获奖级别',
+        children: [{
+            value: 30,
+            label: '国家级'
+          },{
+            value: 20,
+            label: '省部级'
+          },{
+            value: 10,
+            label: '市厅级'
+          },{
+            value: 6,
+            label: '校级'
+          },{
+            value: 3,
+            label: '院级'
+          }]
+          }], 
+
+
+
+学科建设总分：xyrModule.xkjs.itemScore  
