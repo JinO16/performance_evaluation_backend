@@ -13,7 +13,8 @@ module.exports = {
   'GET /level/getAll': 'LevelController.getAll',//获取所有级别
   'POST /level/update': 'LevelController.update',//修改级别
   'DELETE /level/delete': 'LevelController.delete',//删除级别
- //数据清单及审核接口
+  
+  //工作量模块
   'POST /teachWorkload/add': 'TeachWorkloadController.add',//添加工作量模块数据
   'GET /teachWorkload/getOwn': 'TeachWorkloadController.getOwnTeachWorkload',//用户获取自己的工作量数据清单
   'PUT /teachWorkload/update': 'TeachWorkloadController.update',//修改某条工作量清单数据
@@ -37,5 +38,8 @@ module.exports = {
   'POST /zygxStationSet/add': 'ZygxStationController.add',//添加岗位权重
   'GET /zygxStationSet/getAll':'ZygxStationController.getAll',//获取岗位信息接口
   'PUT /zygxStationSet/update': 'ZygxStationController.update',//修改岗位信息接口
-
+  //科研模块岗位权重设置接口
+  'POST /sciStationSet/add': 'SciStationController.add',//添加岗位权重
+  'GET /sciStationSet/getAll':'SciStationController.getAll',//获取岗位信息接口
+  'PUT /sciStationSet/update': 'SciStationController.update',//修改岗位信息接口
 }

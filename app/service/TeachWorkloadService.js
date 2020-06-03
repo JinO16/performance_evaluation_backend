@@ -16,6 +16,7 @@ module.exports = {
             reqParam.xyrModule && (data.xyrModule = reqParam.xyrModule);
             reqParam.zygxModule && (data.zygxModule = reqParam.zygxModule);
             reqParam.xsgzModule && (data.xsgzModule = reqParam.xsgzModule);
+            reqParam.scienceMoudle && (data.scienceMoudle = reqParam.scienceMoudle);
             let TeachWorkloadData = new TeachWorkload(data);
             TeachWorkloadData.save(function (err,data) {
                 if (err) {
@@ -71,6 +72,7 @@ module.exports = {
             reqParam.xyrModule && (updateData.xyrModule = reqParam.xyrModule);
             reqParam.zygxModule && (updateData.zygxModule = reqParam.zygxModule);
             reqParam.xsgzModule && (updateData.xsgzModule = reqParam.xsgzModule);
+            reqParam.scienceMoudle && (updateData.scienceMoudle = reqParam.scienceMoudle);
             TeachWorkload.findByIdAndUpdate(data._id,updateData,{new: false}, function(err, data) {
                 if (err) {
                     reject({ code: 500, message:'创建失败，' + err.message})
