@@ -13,6 +13,9 @@ module.exports = {
             reqParam.finalStatus && (data.finalStatus = reqParam.finalStatus);
             reqParam.submitTime && (data.submitTime = reqParam.submitTime);
             reqParam.teachingMoudle && (data.teachingMoudle = reqParam.teachingMoudle);
+            reqParam.xyrModule && (data.xyrModule = reqParam.xyrModule);
+            reqParam.zygxModule && (data.zygxModule = reqParam.zygxModule);
+            reqParam.xsgzModule && (data.xsgzModule = reqParam.xsgzModule);
             let TeachWorkloadData = new TeachWorkload(data);
             TeachWorkloadData.save(function (err,data) {
                 if (err) {
@@ -65,6 +68,9 @@ module.exports = {
             reqParam.finalStatus && (updateData.finalStatus = reqParam.finalStatus);
             reqParam.submitTime && (updateData.submitTime = reqParam.submitTime);
             reqParam.teachingMoudle && (updateData.teachingMoudle = reqParam.teachingMoudle);
+            reqParam.xyrModule && (updateData.xyrModule = reqParam.xyrModule);
+            reqParam.zygxModule && (updateData.zygxModule = reqParam.zygxModule);
+            reqParam.xsgzModule && (updateData.xsgzModule = reqParam.xsgzModule);
             TeachWorkload.findByIdAndUpdate(data._id,updateData,{new: false}, function(err, data) {
                 if (err) {
                     reject({ code: 500, message:'创建失败，' + err.message})
