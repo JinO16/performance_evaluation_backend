@@ -111,16 +111,16 @@ module.exports = {
     getAllUser: function (reqParam) {
         return new Promise((resolve,reject) => {
             let data = {},skip,limit;
-            if (reqParam.skip) {
-                skip = reqParam.skip;
-            } else {
-                skip = 0;
-            }
-            if (reqParam.limit) {
-                limit = reqParam.limit;
-            } else {
-                limit = 10;
-            }
+            // if (reqParam.skip) {
+            //     skip = reqParam.skip;
+            // } else {
+            //     skip = 0;
+            // }
+            // if (reqParam.limit) {
+            //     limit = reqParam.limit;
+            // } else {
+            //     limit = 10;
+            // }
             if (reqParam.name) data.name = reqParam.name;
             if (reqParam._id) data._id = reqParam._id;
             User.countDocuments(data, function (err, count) {

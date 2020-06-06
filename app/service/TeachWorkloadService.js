@@ -19,6 +19,7 @@ module.exports = {
             reqParam.scienceMoudle && (data.scienceMoudle = reqParam.scienceMoudle);
             let TeachWorkloadData = new TeachWorkload(data);
             TeachWorkloadData.save(function (err,data) {
+                console.log('接口返回的数据data :>> ', data);
                 if (err) {
                     reject({ code: 500, message: '创建失败！'});
                 } else {

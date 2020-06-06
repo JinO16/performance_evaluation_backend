@@ -3,6 +3,7 @@ module.exports = {
     //添加工作量模块数据
     add: function(req,res,next) {
         let reqParam = req.body;
+        console.log('传参reqParam :>> ', reqParam);
         teachWorkloadServer.createTeachWorkload(reqParam).then(result => {
             res.send(result);
         }).catch(err => {
